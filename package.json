@@ -134,7 +134,9 @@
   },
   "scripts": {
     "start": "react-app-rewired start",
-    "build": "react-app-rewired build"
+    "build": "react-app-rewired build",
+    "format:check": "prettier --check \"**/*.{js,jsx,ts,tsx,json}\"",
+    "format:write": "prettier --write \"**/*.{js,jsx,ts,tsx,json}\""
   },
   "eslintConfig": {
     "extends": "react-app"

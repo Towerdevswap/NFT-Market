@@ -103,7 +103,7 @@ const ONE_MONTH = ONE_DAY * 30;
 
 // eslint-disable-next-line no-undef
 const ENV = process.env.REACT_APP_ENV;
-const CHAIN = ENV === 'MAINNET' ? 888 : 5001;
+const CHAIN = ENV === 'MAINNET' ? 5000 : 5001;
 
 import { useZooElixirContract } from 'contracts/zookeeper';
 import { FooterEmbed } from 'components/FooterEmbed';
@@ -307,7 +307,7 @@ export function ArtworkDetailPage() {
   const prevAuthToken = usePrevious(authToken);
 
   const isLoggedIn = () => {
-    return account && (ENV === 'MAINNET' ? chainId === 888 : chainId === 5001);
+    return account && (ENV === 'MAINNET' ? chainId === 5000 : chainId === 5001);
   };
 
   useEffect(() => {
@@ -3120,7 +3120,7 @@ export function ArtworkDetailPage() {
                     headerClassName="px-0"
                     >
                     <div className={styles.multichain}>
-                      Users can utilize Wanchain&apos;s Industry-Best Crosschain Bridge to Execute
+                      Users can utilize Mantle&apos;s Industry-Best Crosschain Bridge to Execute
                       Decentralised, Non-Custodial NFT Crosschain Transactions Between Multiple Chains
                       <a target="_blank" href="https://bridge.wanchain.org/#/nft" rel="noreferrer">
                         <img src="/wanbridge.svg" alt="" /> <FontAwesomeIcon icon={faCaretRight} />
@@ -3207,7 +3207,7 @@ export function ArtworkDetailPage() {
                                     <div className={styles.userAvatarWrapper}>
                                       {ownerInfo?.imageHash ? (
                                         <img
-                                          src={`https://openzoo.mypinata.cloud/ipfs/${ownerInfo.imageHash}`}
+                                          src={`https://blush-rare-tiglon-705.mypinata.cloud/ipfs/${ownerInfo.imageHash}`}
                                           className={styles.userAvatar}
                                         />
                                       ) : (
@@ -3319,7 +3319,7 @@ export function ArtworkDetailPage() {
                                   <div className={styles.userAvatarWrapper}>
                                     {listing.image ? (
                                       <img
-                                        src={`https://openzoo.mypinata.cloud/ipfs/${listing.image}`}
+                                        src={`https://blush-rare-tiglon-705.mypinata.cloud/ipfs/${listing.image}`}
                                         className={styles.userAvatar}
                                       />
                                     ) : (
@@ -3476,7 +3476,7 @@ export function ArtworkDetailPage() {
                                     <div className={styles.userAvatarWrapper}>
                                       {offer.image ? (
                                         <img
-                                          src={`https://openzoo.mypinata.cloud/ipfs/${offer.image}`}
+                                          src={`https://blush-rare-tiglon-705.mypinata.cloud/ipfs/${offer.image}`}
                                           className={styles.userAvatar}
                                         />
                                       ) : (

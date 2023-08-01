@@ -33,7 +33,7 @@ const cards = [
     icon: card2,
     title: 'Super Fast',
     description:
-      'Since OpenZoo runs on the Wanchain Network, transactions are usually confirmed within 5 seconds.',
+      'Since OpenZoo runs on the Mantle Network, transactions are usually confirmed within 5 seconds.',
     path: '/',
   },
   {

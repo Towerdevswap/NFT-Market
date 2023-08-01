@@ -77,7 +77,7 @@ export function AccountProfileOffersList(props) {
                 <div className={styles.ownerAvatarWrapper}>
                   {offer.image ? (
                     <img
-                      src={`https://openzoo.mypinata.cloud/ipfs/${offer.image}`}
+                      src={`https://blush-rare-tiglon-705.mypinata.cloud/ipfs/${offer.image}`}
                       className={styles.ownerAvatar}
                     />
                   ) : (

@@ -485,7 +485,7 @@ export function CollectionList() {
                     <div className={styles.logo}>
                       <img
                         onError={addDefaultSrc}
-                        src={`https://openzoo.mypinata.cloud/ipfs/${collectionData?.logoImageHash}`}
+                        src={`https://blush-rare-tiglon-705.mypinata.cloud/ipfs/${collectionData?.logoImageHash}`}
                       />
                     </div>
                     <div>

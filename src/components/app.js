@@ -1,5 +1,5 @@
-import React, { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import React, { useEffect, useState } from 'react';
+// import { useDispatch } from 'react-redux';
 import {
   BrowserRouter as Router,
   Switch,
@@ -8,7 +8,7 @@ import {
 } from 'react-router-dom';
 
 import { Toaster } from 'react-hot-toast';
-import { ethers } from 'ethers';
+// import { ethers } from 'ethers';
 import { useWeb3React } from '@web3-react/core';
 // import { ChainId } from '@sushiswap/sdk';
 // import { Client } from '@bandprotocol/bandchain.js';
@@ -24,72 +24,62 @@ import AccountDetails from '../pages/AccountDetails';
 import CollectionCreate from '../pages/Collection/Create';
 import CollectionReview from '../pages/Collection/Review';
 import NotificationSetting from '../pages/NotificationSetting';
-import PriceActions from 'actions/price.actions';
+// import PriceActions from 'actions/price.actions';
 import { HomePage } from 'pages/HomePage';
 import { NewExplorePage } from 'pages/NewExplorePage';
 import { ArtworkDetailPage } from 'pages/ArtworkDetailPage';
 import { AccountProfilePage } from 'pages/AccountProfilePage';
 import { CollectionsPage } from 'pages/CollectionsPage';
 import { CollectionList } from 'pages/CollectionList';
-import axios from 'axios';
+// import axios from 'axios';
 // import CoinGeckoActions from 'actions/coinGecko.actions';
 
 const App = () => {
-  const dispatch = useDispatch();
-  const { chainId, connector } = useWeb3React();
+  // const dispatch = useDispatch();
+  const { chainId } = useWeb3React();
 
-  useEffect(() => {
+  const [priceInterval, setPriceInterval] = useState(null);
 
-    //alert('OpenZoo is on maintenance mode. Please do not use it for now. We will be back soon. Thank you for your patience.');
-    const fetch = () => {
-      axios
-        // .get('https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=zookeeper&order=market_cap_desc&per_page=100&page=1&sparkline=false')
-        // .then(response => {
-        //   if (response?.data?.[0])
-        //     dispatch(CoinGeckoActions.dataFetched(response.data[0]))
-        // })
-    }
-
-    fetch();
-    setInterval(fetch, 60000);
-  }, []);
-
-  useEffect(() => {
-    const getPrice = async () => {
-      try {
-        if (chainId === 888) {
-          const web3provider = await connector.getProvider();
-          //await web3provider.enable();
-          const provider = new ethers.providers.Web3Provider(web3provider);
-          const oracle = new ethers.Contract(
-            '0xA34D0a3a38C385B8CAbF1d888c61ca0d2500B7cE',
-            [
-              {
-                inputs: [{ internalType: 'address', type: 'address', name: '_token' }],
-                name: 'getPrice',
-                outputs: [{ internalType: 'int256', name: '', type: 'int256' }],
-                stateMutability: 'view',
-                type: 'function',
-              },
-            ],
-            provider
-          );
-          const LOTTO = '0x1eA7a2Dc8500ea292483ef6c775787851B019d82';
-          const _price = await oracle.getPrice(LOTTO);
-          const price = parseFloat(_price.toString()) / 10 ** 18;
-          dispatch(PriceActions.updatePrice(price));
-        }
-      } catch (err) {
-        console.log(err);
+  const getPrice = async () => {
+    try {
+      if (chainId === 5001) {
+        // const endpoint = 'https://rpc.bandchain.org';
+        // const client = new Client(endpoint);
+        // const resp = await client.getReferenceData(['FTM/USD', 'BTC/USD']);
+        // console.log({ resp });
+        // dispatch(PriceActions.updatePrice(resp.rate));
+        // const provider = new ethers.providers.Web3Provider(window.ethereum);
+        // const oracle = new ethers.Contract(
+        //   '0xb4c64501f67dD63d6F205F35a87Aac73FFd5Ac1f',
+        //   [
+        ///    {
+        //       inputs: [],
+        //       name: 'latestAnswer',
+        //       outputs: [{ internalType: 'int256', name: '', type: 'int256' }],
+        //       stateMutability: 'view',
+        //       type: 'function',
+        //     },
+        //   ],
+        //   provider
+        // );
+        // const _price = await oracle.latestAnswer();
+        // const price = parseFloat(_price.toString()) / 10 ** 8;
+        // dispatch(PriceActions.updatePrice(price));
       }
-    };
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  useEffect(() => {
+    if (priceInterval) {
+      clearInterval(priceInterval);
+    }
 
     getPrice();
-    const timer = setInterval(getPrice, 1000 * 10);
-    return () => {
-      clearInterval(timer);
-    }
+    setPriceInterval(setInterval(getPrice, 1000 * 10));
   }, [chainId]);
+
 
 
   return (

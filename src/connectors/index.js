@@ -8,25 +8,25 @@ import { NetworkConnector } from './NetworkConnector';
 //import ARTION_LOGO_URL from '../assets/svgs/logo_blue.svg';
 
 // eslint-disable-next-line no-undef
-const isMainnet = process.env.REACT_APP_ENV === 'MAINNET';
+const isMainnet = process.env.REACT_APP_ENV === '5001';
 
 const RPC = isMainnet
   ? {
-    [888]: 'https://rpc.zookeeper.finance',
+    [5000]: 'https://rpc.mantle.xyz',
   }
   : {
     [5001]: 'https://rpc.testnet.mantle.xyz',
   };
 
 export const network = new NetworkConnector({
-  defaultChainId: 888,
+  defaultChainId: 5001,
   urls: RPC,
 });
 
 export const injected = new InjectedConnector({
   supportedChainIds: isMainnet
     ? [
-      888, // fantom
+      5000, // fantom
     ]
     : [
       5001, // fantom testnet
@@ -34,12 +34,11 @@ export const injected = new InjectedConnector({
 });
 
 export const walletconnect = new WalletConnectConnector({
-  infuraId: '326fb0397704475abffcfa9ca9c0ee5a',
-  rpcUrl: 'https://rpc.zookeeper.finance',
-  chainId: 888,
-  networkId: 888,
+  rpcUrl: 'https://rpc.testnet.mantle.xyz',
+  chainId: 5001,
+  networkId: 5001,
   rpc: {
-    888: 'https://rpc.zookeeper.finance',
+    5000: 'https://rpc.testnet.mantle.xyz',
     5001: 'https://rpc.testnet.mantle.xyz',
   }
 });

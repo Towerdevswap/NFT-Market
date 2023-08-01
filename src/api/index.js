@@ -9,18 +9,18 @@ export const useApi = () => {
     : 'https://explorer.testnet.mantle.xyz/';
 
   const apiUrl = isMainnet
-    ? 'https://api-mainnet.openzoo.io'
-    : 'https://localhost:5001';
+    ? 'http://localhost:5001'
+    : 'http://localhost:5001';
 
   const thumbUrl = isMainnet
-    ? 'https://thumb-mainnet.openzoo.io'
-    : 'http://localhost:5001';
+    ? 'https://storage.artion.io'
+    : 'https://storage.artion.io';
 
   // eslint-disable-next-line no-undef
   // const apiUrl = process.env.REACT_APP_API_URI;
   const storageUrl = isMainnet
-    ? 'https://api-mainnet.openzoo.io'
-    : 'https://blush-rare-tiglon-705.mypinata.cloud/ipfs';
+    ? 'https://storage.artion.io'
+    : 'https://storage.artion.io';
 
   // const tokenURL = 'https://fetch-tokens.vercel.app/api';
   // const tokenURL = 'https://api.artion.io/nftitems/fetchTokens';

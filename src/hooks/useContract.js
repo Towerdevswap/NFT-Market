@@ -21,9 +21,9 @@ export default () => {
       } else {
         const provider = new ethers.providers.StaticJsonRpcProvider(
           isMainnet
-            ? 'https://rpc.zookeeper.finance/'
+            ? 'https://rpc.mantle.xyz'
             : 'https://rpc.testnet.mantle.xyz',
-          isMainnet ? 888 : 5001
+          isMainnet ? 5000 : 5001
         );
         provider.pollingInterval = 10 * 1000;
 

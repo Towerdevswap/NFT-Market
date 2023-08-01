@@ -7,14 +7,13 @@ import useContract from 'hooks/useContract';
 import { ethers } from 'ethers';
 
 const WFTM_ADDRESS = {
-  888: '0xdabd997ae5e4799be47d6e69d9431615cba28f48',
-  999: '0x916283cc60fdaf05069796466af164876e35d21f',
+  5000: '',
   5001: '0x2C6db4f138A1336dB50Ab698cA70Cf99a37e1198',
 };
 
 // eslint-disable-next-line no-undef
 const isMainnet = process.env.REACT_APP_ENV === 'MAINNET';
-const CHAIN = isMainnet ? 888 : 5001;
+const CHAIN = isMainnet ? 5000 : 5001;
 export const useWFTMContract = () => {
   const { getContract } = useContract();
   const {getHigherGWEI} = useConnectionUtils();

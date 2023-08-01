@@ -21,7 +21,7 @@ function isValidCode(code) {
 
 export function shortenAddress(address, chars = 4) {
   if (!address) return '';
-  if (address === '0x8930f0cafda831181fd3f5dcccaeb0418b615b56') {
+  if (address === '0xa600cB121981F5ddAd5b1fcaa6978e19FE64a8A2') {
     return 'Auction Contract';
   }
   const parsed = isAddress(address);
@@ -42,10 +42,10 @@ export const getRandomIPFS = (tokenURI, justURL = false, isFallback = false) => 
   }
   if (isFallback) {
     if (tokenURI.includes('ipfs://')) {
-      return `https://openzoo.mypinata.cloud/ipfs/${tokenURI.split('ipfs://')[1].replace(/([^:]\/)\/+/g, "$1")}`;
+      return `https://blush-rare-tiglon-705.mypinata.cloud/ipfs/${tokenURI.split('ipfs://')[1].replace(/([^:]\/)\/+/g, "$1")}`;
     }
     else {
-      return `https://openzoo.mypinata.cloud/ipfs/${tokenURI.split('ipfs/')[1]}`;
+      return `https://blush-rare-tiglon-705.mypinata.cloud/ipfs/${tokenURI.split('ipfs/')[1]}`;
     }
   }
   try {

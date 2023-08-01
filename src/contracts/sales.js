@@ -9,7 +9,7 @@ import { SALES_CONTRACT_ABI } from './abi';
 
 // eslint-disable-next-line no-undef
 const isMainnet = process.env.REACT_APP_ENV === 'MAINNET';
-const CHAIN = isMainnet ? 888 : 5001;
+const CHAIN = isMainnet ? 5000 : 5001;
 
 export const useSalesContract = () => {
   const { getContract } = useContract();
@@ -55,7 +55,7 @@ export const useSalesContract = () => {
     const contract = await getSalesContract();
     const options = {
       gasPrice: getHigherGWEI(),
-      gasLimit: 50000000
+      gasLimit: 3001481
     };
 
     return await contract['buyItem(address,uint256,address,address)'](
@@ -71,7 +71,7 @@ export const useSalesContract = () => {
     const contract = await getSalesContract();
     const options = {
       gasPrice: getHigherGWEI(),
-      gasLimit: 50000000
+      gasLimit: 3001481
     };
 
     return await contract['buyItemWithQuantity(address,uint256,address,address,uint256)'](

@@ -69,7 +69,7 @@ export function HeaderAvatarMenu(props) {
     const provider = new ethers.providers.Web3Provider(web3provider);
 
     const ZOO_ADDRESS = {
-      // 888: '0x6e11655d6aB3781C6613db8CB1Bc3deE9a7e111F',
+      5000: '',
       5001: '0x1eA7a2Dc8500ea292483ef6c775787851B019d82',
     };
 

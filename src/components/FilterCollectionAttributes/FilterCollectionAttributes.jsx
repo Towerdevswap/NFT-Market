@@ -17,7 +17,7 @@ import { useDispatch } from 'react-redux';
 import FilterActions from 'actions/filter.actions';
 import { Contracts } from 'constants/networks';
 const ENV = process.env.REACT_APP_ENV;
-const CHAIN = ENV === 'MAINNET' ? 888 : 5001;
+const CHAIN = ENV === 'MAINNET' ? 5000 : 5001;
 
 export function FilterCollectionAttributes({
   hidden = true,

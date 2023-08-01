@@ -25,7 +25,7 @@ const AccountModal = () => {
 
   const rootRef = useRef(null);
   const inputRef = useRef(null);
- 
+
   const [alias, setAlias] = useState('');
   const [email, setEmail] = useState('');
   const [bio, setBio] = useState('');
@@ -39,7 +39,7 @@ const AccountModal = () => {
   useEffect(() => {
     if (accountModalVisible) {
       if (user.imageHash) {
-        setAvatar(`https://openzoo.mypinata.cloud/ipfs/${user.imageHash}`);
+        setAvatar(`https://blush-rare-tiglon-705.mypinata.cloud/ipfs/${user.imageHash}`);
       } else {
         setAvatar(null);
       }
@@ -136,7 +136,7 @@ const AccountModal = () => {
 
       if (!avatar || avatar.startsWith('https')) {
 
-        
+
 
         const res = await updateAccountDetails(
           alias,

@@ -87,7 +87,7 @@ export function AccountProfilePageHeader(props) {
             <Skeleton width="100%" height="100%" />
           ) : bannerHash || user.bannerHash ? (
             <img
-              src={`https://openzoo.mypinata.cloud/ipfs/${bannerHash ||
+              src={`https://blush-rare-tiglon-705.mypinata.cloud/ipfs/${bannerHash ||
                 user.bannerHash}`}
               alt=""
             />
@@ -115,7 +115,7 @@ export function AccountProfilePageHeader(props) {
                   <div className="avatar_wrap">
                     <Avatar account={uid} size="lg" user={user} />
                   </div>
-                  <h5>{user?.alias || ((uid === '0x8930f0cafda831181fd3f5dcccaeb0418b615b56') ? 'Auction Contract' :'unnamed')}</h5>
+                  <h5>{user?.alias || ((uid === '0xa600cB121981F5ddAd5b1fcaa6978e19FE64a8A2') ? 'Auction Contract' :'unnamed')}</h5>
                 </div>
                 <div className="avatars d-flex space-x-20 align-items-center">
                   <div className="avatar_wrap"></div>
@@ -234,7 +234,7 @@ const useStyle = makeStyles(() => ({
     alignItems: 'center',
     justifyContent: 'center',
     cursor: 'pointer',
-    
+
   },
   bannerPlaceholder: {
     width: '100%',

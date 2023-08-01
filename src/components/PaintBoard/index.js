@@ -148,7 +148,7 @@ const PaintBoard = () => {
     fetchMintableCollections,
     getNonce,
     addUnlockableContent,
-    checkBan,
+    // checkBan,
   } = useApi();
 
   const { registerRoyalty } = useSalesContract();
@@ -437,7 +437,7 @@ const PaintBoard = () => {
       showToast('info', 'Connect your wallet first');
       return;
     }
-    if (chainId !== 888 && chainId !== 5001) {
+    if (chainId !== 5000 && chainId !== 5001) {
       showToast('info', 'You are not connected to Wanchain Network');
       return;
     }
@@ -461,12 +461,12 @@ const PaintBoard = () => {
       return;
     }
 
-    let isBanned = await checkBan(account, authToken);
+    /* let isBanned = await checkBan(account, authToken);
 
     if (isBanned) {
       showToast('error', 'You are banned from minting');
       return;
-    }
+    } */
 
     setLastMintedTnxId('');
     // show stepper
@@ -1154,7 +1154,7 @@ const PaintBoard = () => {
             {fee !== null && fee > 0 ? (
               <>
                 <InfoIcon />
-                &nbsp;{fee} WANs are charged to create a new NFT.
+                &nbsp;{fee} MNTs are charged to create a new NFT.
               </>
             ) : (
               fee > 0 ? <Skeleton width={330} height={22} /> : ''

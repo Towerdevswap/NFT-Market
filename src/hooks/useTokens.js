@@ -3,7 +3,7 @@
 import iconFTM from 'assets/imgs/ftm.png';
 //import iconWFTM from 'assets/imgs/wwan.png';
 import iconZOO from 'assets/imgs/Zoo_ticker.svg';
-import iconVZOO from 'assets/imgs/vZoo_ticker.svg';
+// import iconVZOO from 'assets/imgs/vZoo_ticker.svg';
 // import iconUSDT from 'assets/imgs/usdt.png';
 // import iconUSDC from 'assets/imgs/usdc.png';
 // import iconDAI from 'assets/imgs/dai.png';
@@ -17,7 +17,7 @@ import iconVZOO from 'assets/imgs/vZoo_ticker.svg';
 const isMainnet = process.env.REACT_APP_ENV === 'MAINNET';
 
 const Tokens = {
-  888: [
+  5000: [
     // {
     //   address: '',
     //   name: 'Fantom',
@@ -26,7 +26,7 @@ const Tokens = {
     //   icon: iconFTM,
     // },
     {
-      address: '0x6e11655d6aB3781C6613db8CB1Bc3deE9a7e111F',
+      address: '',
       name: 'ZOO',
       symbol: 'ZOO',
       decimals: 18,
@@ -57,13 +57,13 @@ const Tokens = {
       decimals: 18,
       icon: iconZOO,
     },
-    {
-      address: '0xcEEbf071CeFdD33364012a4A6BdC82105e754f53',
-      name: 'vZOO',
-      symbol: 'vZOO',
-      decimals: 18,
-      icon: iconVZOO,
-    },
+    // {
+    //   address: '0xcEEbf071CeFdD33364012a4A6BdC82105e754f53',
+    //   name: 'vZOO',
+    //   symbol: 'vZOO',
+    //   decimals: 18,
+    //   icon: iconVZOO,
+    // },
     // {
     //   address: '0x916283cc60fdaf05069796466af164876e35d21f',
     //   name: 'Wrapped WAN',
@@ -83,7 +83,7 @@ const Tokens = {
 };
 
 export default function useTokens() {
-  const chain = isMainnet ? 888 : 5001;
+  const chain = isMainnet ? 5000 : 5001;
 
   const tokens = Tokens[chain];
 

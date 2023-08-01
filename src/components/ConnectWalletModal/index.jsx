@@ -84,7 +84,7 @@ const ConnectWalletModal = ({ visible, onClose }) => {
         <div>
           <div className={styles.text}>
             Please connect to the{' '}
-            {isMainnet ? 'Wanchain Mainnet' : 'Wanchain Testnet'}.
+            {isMainnet ? 'Mantle Mainnet' : 'Mantle Testnet'}.
           </div>
           <div
             className={styles.switchBtn}
@@ -94,14 +94,14 @@ const ConnectWalletModal = ({ visible, onClose }) => {
                 window.alert('please install MetaMask at: MetaMask.io');
               } else {
                 try {
-                  const param = { 
-                    chainId: '0x378',
-                    chainName: 'Wanchain Mainnet',
-                    rpcUrls: ['https://gwan-ssl.wandevs.org:56891'],
-                    blockExplorerUrls: ['https://wanscan.org/'],
+                  const param = {
+                    chainId: '0x1389',
+                    chainName: 'Mantle Testnet',
+                    rpcUrls: ['https://rpc.testnet.mantle.xyz'],
+                    blockExplorerUrls: ['https://explorer.testnet.mantle.xyz/'],
                     nativeCurrency: {
-                      name: 'WAN',
-                      symbol: 'WAN', // 2-6 characters long
+                      name: 'MANTLE',
+                      symbol: 'MNT', // 2-6 characters long
                       decimals: 18,
                     },
                   };
@@ -116,7 +116,7 @@ const ConnectWalletModal = ({ visible, onClose }) => {
               }
             }}
           >
-            Switch to Wanchain in MetaMask
+            Switch to Mantle in MetaMask
           </div>
           <div className={styles.switchBtn} onClick={deactivate}>
             Disconnect
